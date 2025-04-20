@@ -112,6 +112,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Save preference to localStorage
     localStorage.setItem("darkMode", darkModeEnabled);
+
+    // Display confirmation message
+    const message = document.createElement("div");
+    message.className = "confirmation-message";
+    message.textContent = darkModeEnabled
+      ? "Dark mode enabled!"
+      : "Light mode enabled!";
+    document.body.appendChild(message);
+
+    setTimeout(() => {
+      message.remove();
+    }, 2000);
   });
 
   // Smooth scroll for anchor links

@@ -22,7 +22,22 @@ body.dark-mode {
   color: #e0e0e0;
   background: linear-gradient(to bottom, #121212, #1c1c1c);
 }
+.participant-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f0f8ff;
+  color: #333;
+  font-size: 16px;
+  text-align: left;
+}
 
+body.dark-mode .participant-info {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
 header {
   text-align: center;
   padding: 20px 0;
@@ -233,6 +248,43 @@ body.dark-mode #dark-mode-toggle:hover {
 #dark-mode-toggle:hover {
   background-color: #3949ab;
   transform: scale(1.1);
+}
+
+.confirmation-message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1a237e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  z-index: 1000;
+  animation: fade-in-out 2s ease;
+}
+
+body.dark-mode .confirmation-message {
+  background-color: #333;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
 
 footer {
