@@ -22,7 +22,22 @@ body.dark-mode {
   color: #e0e0e0;
   background: linear-gradient(to bottom, #121212, #1c1c1c);
 }
+.participant-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f0f8ff;
+  color: #333;
+  font-size: 16px;
+  text-align: left;
+}
 
+body.dark-mode .participant-info {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
 header {
   text-align: center;
   padding: 20px 0;
