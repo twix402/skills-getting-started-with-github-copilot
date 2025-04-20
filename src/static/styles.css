@@ -13,6 +13,12 @@ body {
   margin: 0 auto;
   padding: 20px;
   background-color: #f5f5f5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 header {
@@ -22,6 +28,10 @@ header {
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
 }
 
 header h1 {
@@ -48,6 +58,13 @@ section {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
+  color: #333;
+}
+
+body.dark-mode section {
+  background-color: #1c1c1c;
+  color: #e0e0e0;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 section h3 {
@@ -63,6 +80,11 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+}
+
+body.dark-mode .activity-card {
+  background-color: #2a2a2a;
+  border-color: #444;
 }
 
 .activity-card h4 {
@@ -104,8 +126,17 @@ button {
   transition: background-color 0.2s;
 }
 
+body.dark-mode button {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
 button:hover {
   background-color: #3949ab;
+}
+
+body.dark-mode button:hover {
+  background-color: #444;
 }
 
 .message {
@@ -120,10 +151,20 @@ button:hover {
   border: 1px solid #a5d6a7;
 }
 
+body.dark-mode .success {
+  background-color: #1b5e20;
+  color: #a5d6a7;
+}
+
 .error {
   background-color: #ffebee;
   color: #c62828;
   border: 1px solid #ef9a9a;
+}
+
+body.dark-mode .error {
+  background-color: #b71c1c;
+  color: #ef9a9a;
 }
 
 .info {
@@ -132,8 +173,41 @@ button:hover {
   border: 1px solid #bee5eb;
 }
 
+body.dark-mode .info {
+  background-color: #01579b;
+  color: #81d4fa;
+}
+
 .hidden {
   display: none;
+}
+
+#dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #1a237e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 1000;
+}
+
+body.dark-mode #dark-mode-toggle {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+  background-color: #444;
+}
+
+#dark-mode-toggle:hover {
+  background-color: #3949ab;
 }
 
 footer {

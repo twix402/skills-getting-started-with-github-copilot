@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const activitySelect = document.getElementById("activity");
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  const body = document.body;
 
   // Function to fetch activities from API
   async function fetchActivities() {
@@ -91,6 +93,25 @@ document.addEventListener("DOMContentLoaded", () => {
       messageDiv.classList.remove("hidden");
       console.error("Error signing up:", error);
     }
+  });
+
+  // Check and apply saved dark mode preference
+  const isDarkMode = localStorage.getItem("darkMode") === "true";
+  if (isDarkMode) {
+    body.classList.add("dark-mode");
+    darkModeToggle.textContent = "Switch to Light Mode";
+  }
+
+  // Toggle dark mode on button click
+  darkModeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    const darkModeEnabled = body.classList.contains("dark-mode");
+    darkModeToggle.textContent = darkModeEnabled
+      ? "Switch to Light Mode"
+      : "Switch to Dark Mode";
+
+    // Save preference to localStorage
+    localStorage.setItem("darkMode", darkModeEnabled);
   });
 
   // Initialize app
