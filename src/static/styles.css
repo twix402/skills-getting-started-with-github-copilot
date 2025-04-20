@@ -235,6 +235,43 @@ body.dark-mode #dark-mode-toggle:hover {
   transform: scale(1.1);
 }
 
+.confirmation-message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1a237e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  z-index: 1000;
+  animation: fade-in-out 2s ease;
+}
+
+body.dark-mode .confirmation-message {
+  background-color: #333;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
